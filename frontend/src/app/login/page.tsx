@@ -47,6 +47,7 @@ export default function LoginPage() {
           className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3"
         />
         {error ? <p className="text-sm text-danger">{error}</p> : null}
+        {/*Login button with hover effect*/}
         <button
           type="submit"
           className="w-full rounded-full bg-white px-5 py-3 font-semibold text-slate-950 transition hover:scale-[1.02]"
