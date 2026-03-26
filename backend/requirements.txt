@@ -1,0 +1,11 @@
+Django==6.0.3
+djangorestframework==3.17.0
+djangorestframework-simplejwt==5.5.1
+django-cors-headers==4.9.0
+psycopg[binary]==3.3.3
+Pillow==12.1.1
+boto3==1.42.74
+django-storages==1.14.6
+stripe==14.4.1
+python-dotenv==1.1.1
+gunicorn==23.0.0

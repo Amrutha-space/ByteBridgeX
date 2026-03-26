@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: bytebridgex-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: bytebridgex
+      POSTGRES_USER: bytebridgex
+      POSTGRES_PASSWORD: bytebridgex
+    ports:
+      - "5432:5432"
+    volumes:
+      - bytebridgex_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  bytebridgex_postgres_data:
