@@ -1,121 +1,151 @@
 # ByteBridgeX
 
-ByteBridgeX is a production-oriented developer marketplace where teams can buy and sell code components, UI kits, APIs, templates, and AI models with immersive previews, seller tooling, and Stripe-backed checkout.
+**ByteBridgeX** is a full-stack developer marketplace where developers can **buy, sell, and explore code assets** such as UI kits, APIs, templates, and AI models — with secure payments and immersive previews.
 
-## Stack
+> Built as a production-grade application with scalable architecture, real-world features, and modern tech stack.
+---
+## 🌐 Live Demo
 
-- Frontend: Next.js App Router, Tailwind CSS, Framer Motion, Three.js, Axios
-- Backend: Django, Django REST Framework, SimpleJWT
-- Database: PostgreSQL
-- Storage: AWS S3 with local media fallback
-- Payments: Stripe Checkout
+👉 **Frontend (User App):**
+https://byte-bridge-x.vercel.app/
 
-## Project Structure
+👉 **API Base URL:**
+https://bytebridgex.onrender.com/
 
-```text
-/bytebridgex
-  /frontend
-  /backend
-  /docs
-  docker-compose.yml
-  README.md
+🔐 **Demo Credentials** 
+Email: [demo@bytebridge.com](mailto:demo@bytebridge.com)
+Password: demo123
+---
+
+##  Key Features
+
+*  JWT Authentication (User / Seller / Admin roles)
+*  Developer marketplace (buy & sell assets)
+*  Advanced search and filtering
+*  Reviews & ratings system
+*  Seller dashboard (uploads, earnings tracking)
+*  Persistent cart & checkout flow
+*  Stripe payment integration
+*  Secure file downloads after purchase
+*  3D product previews using Three.js
+*  Admin panel for moderation
+---
+
+##  Tech Stack
+
+**Frontend**
+
+* Next.js (App Router)
+* Tailwind CSS
+* Framer Motion
+* Three.js
+
+**Backend**
+
+* Django
+* Django REST Framework
+* JWT (SimpleJWT)
+
+**Infrastructure**
+
+* PostgreSQL
+* AWS S3 (file storage)
+* Stripe (payments)
+* Vercel (frontend deployment)
+* Render (backend deployment)
+
+---
+
+## 📁 Project Structure
+
+```
+bytebridgex/
+  ├── frontend/
+  ├── backend/
+  ├── docs/
+  ├── docker-compose.yml
+  └── README.md
 ```
 
-## 1. Local Setup Commands
+---
 
-### Start PostgreSQL
+## ⚙️ Local Setup
 
-Use Docker:
+### 1️⃣ Clone Repository
 
-```bash
-cd /Users/amrutha/DimensionProjects/SmartBill-AI/bytebridgex
-docker compose up -d
+```
+git clone <https://github.com/Amrutha-space/ByteBridgeX>
+cd bytebridgex
 ```
 
-Or use a local PostgreSQL installation:
+### 2️⃣ Backend Setup
 
-```bash
-createuser -s bytebridgex
-createdb bytebridgex -O bytebridgex
 ```
-
-### Backend Setup
-
-```bash
-cd /Users/amrutha/DimensionProjects/SmartBill-AI/bytebridgex/backend
-python3 -m venv .venv
+cd backend
+python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
-python manage.py makemigrations
+
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
 ```
 
-### Frontend Setup
+### 3️⃣ Frontend Setup
 
-```bash
-cd /Users/amrutha/DimensionProjects/SmartBill-AI/bytebridgex/frontend
+```
+cd frontend
 cp .env.example .env.local
 npm install
-npm run lint
-npx next build --webpack
 npm run dev
 ```
 
-## 2. Environment Files
+---
 
-Backend: [`backend/.env.example`](/Users/amrutha/DimensionProjects/SmartBill-AI/bytebridgex/backend/.env.example)
+## 🔑 Environment Variables
 
-Frontend: [`frontend/.env.example`](/Users/amrutha/DimensionProjects/SmartBill-AI/bytebridgex/frontend/.env.example)
+**Backend**
 
-Key variables:
+* DATABASE_URL
+* AWS credentials
+* STRIPE_SECRET_KEY
 
-- `DATABASE_URL`: PostgreSQL connection string
-- `DJANGO_CORS_ALLOWED_ORIGINS`: frontend origin list
-- `AWS_*`: S3 storage credentials and bucket settings
-- `STRIPE_SECRET_KEY`: backend Stripe secret
-- `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`: frontend Stripe publishable key
-- `NEXT_PUBLIC_API_BASE_URL`: backend API base URL
+**Frontend**
 
-## 3. Core Features
+* NEXT_PUBLIC_API_BASE_URL
+* STRIPE_PUBLISHABLE_KEY
 
-- JWT authentication with buyer/seller/admin roles
-- Product catalog with search and filters
-- Product detail pages with reviews and ratings
-- Seller dashboard with product uploads and earnings
-- Persistent cart with checkout flow
-- Stripe Checkout session creation and payment confirmation
-- Download-protected purchased files
-- Three.js-powered 3D product preview
-- Django admin for moderation
+---
 
-## 4. API Overview
+## 📡 API Overview
 
-- `POST /api/auth/signup/`
-- `POST /api/auth/login/`
-- `GET /api/auth/me/`
-- `GET /api/marketplace/products/`
-- `POST /api/marketplace/products/`
-- `GET /api/marketplace/products/mine/`
-- `POST /api/marketplace/products/{slug}/reviews/`
-- `GET|POST|PATCH|DELETE /api/orders/cart/`
-- `GET /api/orders/earnings/`
-- `POST /api/payments/checkout-session/`
-- `POST /api/payments/confirm/`
+* Auth: `/api/auth/`
+* Products: `/api/marketplace/products/`
+* Cart & Orders: `/api/orders/`
+* Payments: `/api/payments/`
 
-## 5. Verification
+---
 
-Verified in this workspace:
+## 🚀 Deployment
 
-- `python manage.py check`
-- `python manage.py makemigrations`
-- `npm run lint`
-- `npx next build --webpack`
+* Frontend → Vercel
+* Backend → Render
+* Database → PostgreSQL
 
-Note: the local PostgreSQL service was not running in this environment, so `python manage.py migrate` and `runserver` still need a live database before they can complete.
+Detailed steps in: `docs/deployment.md`
 
-## 6. Deployment
+---
 
-See [`docs/deployment.md`](/Users/amrutha/DimensionProjects/SmartBill-AI/bytebridgex/docs/deployment.md) for Vercel and Render steps.
+## 📌 Future Improvements
+
+* AI-powered product recommendations
+* Real-time notifications
+* Microservices architecture
+* Analytics dashboard
+
+---
+
+## 👨‍💻 Author
+
+Amrutha A 
