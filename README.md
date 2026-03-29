@@ -1,6 +1,6 @@
 # ByteBridgeX
 
-**ByteBridgeX** is a full-stack developer marketplace where developers can **buy, sell, and explore code assets** such as UI kits, APIs, templates, and AI models — with secure payments and immersive previews.
+**ByteBridgeX** is a full-stack developer marketplace where developers can **buy, sell, and explore code assets** such as UI kits, APIs, templates, and AI models — with secure payments and immersive previews. It's a place where Code meets Commerce.
 
 > Built as a production-grade application with scalable architecture, real-world features, and modern tech stack.
 ---
@@ -149,3 +149,4 @@ Detailed steps in: `docs/deployment.md`
 ## 👨‍💻 Author
 
 Amrutha A 
+CSE
